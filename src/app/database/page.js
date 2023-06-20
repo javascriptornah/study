@@ -1,17 +1,16 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import week3, {
-  week1,
+import week1, {
   week2,
+  week3,
   week4,
   week5,
-  week6,
-} from "../../../public/data/computer_essentials";
+} from "../../../public/data/database";
 import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
-import GenerateBtn from "./GenerateBtn";
-import Question from "./Question";
+import GenerateBtn from "../computerEssentials/GenerateBtn";
+import Question from "../computerEssentials/Question";
 const Cont = styled.div`
   padding: 32px;
   @keyframes opacity {
@@ -42,14 +41,7 @@ const Cont = styled.div`
   }
 `;
 const ComputerEssentials = () => {
-  const [weeks, setWeeks] = useState([
-    week1,
-    week2,
-    week3,
-    week4,
-    week5,
-    week6,
-  ]);
+  const [weeks, setWeeks] = useState([week1, week2, week3, week4, week5]);
   const [week, setWeek] = useState(0);
   const questionRef = useRef(null);
   const [question, setQuestion] = useState(weeks[0][0]);
@@ -62,18 +54,21 @@ const ComputerEssentials = () => {
       return;
     }
     setQuestion(weeks[week][number]);
-
+    console.log("kkk");
+    console.log(questionRef);
     try {
-      questionRef?.current?.classList?.add("opacity-anim");
-      setTimeout(() => {
-        questionRef?.current?.classList?.remove("opacity-anim");
-      }, 500);
+      if (questionRef != null) {
+        questionRef?.current?.classList?.add("opacity-anim");
+        setTimeout(() => {
+          questionRef?.current?.classList?.remove("opacity-anim");
+        }, 500);
+      }
     } catch (e) {}
   };
 
   const [weekBtns, setWeekBtns] = useState(() => {
     let weekObj = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
       weekObj.push(
         <div
           onClick={() => setWeek(i)}
@@ -89,7 +84,7 @@ const ComputerEssentials = () => {
   useEffect(() => {
     setWeekBtns((prev) => {
       let weekObj = [];
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 5; i++) {
         weekObj.push(
           <div
             onClick={() => setWeek(i)}
@@ -105,7 +100,7 @@ const ComputerEssentials = () => {
   }, [week]);
   return (
     <Cont colors={COLORS}>
-      <h2 className="mar-bottom-8">Computer Essentials Study Quiz</h2>
+      <h2 className="mar-bottom-8">Database Study Quiz</h2>
       <div className="grey-line mar-bottom-16"></div>
       <div className="flex mar-bottom-32 flex-wrap">{weekBtns}</div>
       <div className="flex justify-center mar-bottom-32">

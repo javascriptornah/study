@@ -1,5 +1,8 @@
+"use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import styled from "styled-components";
 import COLORS from "../data/colors";
 
@@ -12,13 +15,22 @@ const Cont = styled.div`
 `;
 
 const Navbar = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <Cont colors={COLORS}>
       <h3>Study Guide</h3>
       <Link href="/computerEssentials">
-        <h3>Computer Essentials</h3>
+        <h3 className={pathname == "/computerEssentials" ? "active-link" : ""}>
+          Computer Essentials
+        </h3>
       </Link>
-      <h3>Database</h3>
+      <Link href="/database">
+        <h3 className={pathname == "/database" ? "active-link" : ""}>
+          Database
+        </h3>
+      </Link>
     </Cont>
   );
 };

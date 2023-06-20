@@ -11,9 +11,7 @@ const Cont = styled.div`
   }
 `;
 
-const Question = ({ question }) => {
-  const [show, setShow] = useState(false);
-
+const Question = ({ question, show, setShow }) => {
   return (
     <Cont colors={COLORS}>
       {show ? (

@@ -18,7 +18,7 @@ const Question = ({ question, show, setShow }) => {
         <div onClick={() => setShow(false)} className="info-box">
           <p>{question.answer}</p>
           <div className="mar-bottom-16"></div>
-          <div className="flex justify-center">
+          <div className="flex justify-center x">
             <div className="btn" onClick={() => setShow(true)}>
               <p>Show question</p>
             </div>

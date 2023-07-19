@@ -22,12 +22,12 @@ const Navbar = () => {
     <Cont colors={COLORS}>
       <h3>Study Guide</h3>
       <Link href="/computerEssentials">
-        <h3 className={pathname == "/computerEssentials" ? "active-link" : ""}>
+        <h3 className={pathname == "/computerEssentials" ? "active-link" : "nav-link"}>
           Computer Essentials
         </h3>
       </Link>
       <Link href="/database">
-        <h3 className={pathname == "/database" ? "active-link" : ""}>
+        <h3 className={pathname == "/database" ? "active-link" : "nav-link"}>
           Database
         </h3>
       </Link>

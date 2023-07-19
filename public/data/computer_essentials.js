@@ -263,3 +263,96 @@ export const week1 = [
       "8 chars minimum, 4 = 1 lower case, 1 upper case, 1 number, 1 special character",
   },
 ];
+
+export const week9 = [
+  {
+    question: "What is virtualization?",
+    answer:
+      "Access to single underlying piece of hardware, such as a server, is coordinated so that multipel guest operating systems (OS) can share that single piece of hardware.",
+  },
+  {
+    question: "What is hypervisor?",
+    answer:
+      "A piece of software or firmware that enbales the segmentation and monitoring of physical hardware \n Two types of hypervisors: Type 1 and Type 2",
+  },
+  {
+    question: "What is type 1 Hypervisor?",
+    answer:
+      "Type 1 Hypervisor runs directly on the systems hardware. No intermediary OS required. \n E.g. ESXi, Proxmox, Hyper-V \nTerm bare metal: It is an environment where a computer system or a network in which a virtual machine is installed directly on hardware rather than within the host operating system (OS). Ther term 'bare metal' refers to a hard disk, the usual medium on which a computer's OS is installed.",
+  },
+  {
+    question: "What is type 2 Hypervisor?",
+    answer:
+      "Type 2 Hypervisor runs as an application within an OS environment. \nE.g. VMware Workstation, Oracle's VirtualBox. \nThe host hardware is the base on which the host operating system supports the virtualization application, which then hosts guest operating system(s)",
+  },
+  {
+    question: "What are some reasons to use virtualization? (8)",
+    answer:
+      "- Hardware is underutilized \n-Datacenters run out of space \n-Energy costs are always rising \n-System adimistration costs are rising \n-Set up complex testing environments including networking \n-Faster access to other operating systems \n-A VM can be up and running while you use to host operating system \n- Access to other operating systems almost instatnly instead of shutting down your computer and restartign another operating system \n- Snapshots and undo disks. If after uninstalling a software update on a VM, the VM is unstable you can undo the update on the VM \n- Virtualized Hardware. \nWhen using a new hardware, ti can be difficult to get drivers for older operating systems. \n However, VM's have widely supported virtual hardware that is independent of the host OS, ",
+  },
+  {
+    question: "What are some beenfits of virtualization (8)?",
+    answer:
+      "Shorten development cycles \n - Increase hardware utilization \n - Reduce problem resolution time \n-Increase productivity \n - Accelerate time-to-market \n-Improve project quality \n -Relocation from one machine to another as needed \n- Disaster protection / Failing Hardware",
+  },
+  {
+    question: "What can be virtualized?",
+    answer:
+      "- Network \n- The splitting up of available bandwidth into seperate independent channels \n - Routers: including NAT and DHCP functionality \n - Storage \n - Containerization of storage seperates VM storage areas. This means that each VM is allocated a dedicated storage space \n - The pooling of physical storage from multiple network storage devices into what appears to be a single storage device such as SAN - Storage Area Networks \n- CPU \n-Independent but very similar technologies by Intel (VT-x) and AMD (AMD-V) which are aimed to improve the processor performance for common virtualization challenges like translating instructions and memory addresses.",
+  },
+];
+
+export const week10 = [
+  {
+    question: "What is partitioning?",
+    answer:
+      "Partitioning is the process of sub- dividing a physicaly drive into smaller units called partitions. \nEvery hard drive must have at least one partition before it can be formatted.",
+  },
+  {
+    question: "What are the reasons for using multipel partitions? (3)",
+    answer:
+      "- Increase performance \n- Simplify backups \n-Installation of multiple operating systems",
+  },
+  {
+    question: "What file system does Windows use?",
+    answer:
+      "-FAT (8, 12, 16, 32; exFAT for flash drives) \n-NTFS (most modern Windows computers)",
+  },
+  {
+    question: "What file system does Linux use?",
+    answer:
+      "UFS (the Unix File System)\n-ext*, and many, many others\n-mkfs\n-fsck (journaling on ext3, reiserfs, etc.)",
+  },
+  {
+    question: "What are the three partition methods that windows supports?",
+    answer:
+      "Master Boot Record (MBR) \n- Oldest method \n -Only works on hard drives that are 2 TB or less \nGUID partitioning table (GPT) \n-Global Unique Identifier Partition Table \n- Similar to MBR but with extra features \nWindows dynamic storage partition \n- Proprietary",
+  },
+  {
+    question: "What are the two types of partitions?",
+    answer: "- Primary \n- Extended",
+  },
+  {
+    question: "What is the primary partition?",
+    answer:
+      "- Stores the operating system \n - If you want to boot from the hard drive it must have a primary aprtition \n-Maximum of four primary partitions \n-DOS and Windows 9x operating systems only support one primary partition \n- Can be used to install multiple operating systems \n -Only one primary partition can be active, the actice partition is the one that will be booted from",
+  },
+  {
+    question: "What is an extended partition?",
+    answer:
+      "- Is not bootable \n - A hard drive can only have one extended partition \n- Uses one of the four entries in the partition table leaving only three entries for primary partitions \n- You can add up to 24 logical partitions or drives from the extended partition \n- Each logical drive is assigned its own unique drive letter",
+  },
+  {
+    question: "What are Drive Letters?",
+    answer:
+      "- Each disk volume is assigned a drive letter to identfiy it \n- The first drive letter used by hard drives is C \n- Drive letters are assigned in a specific order \n- All primary partitions first \n- Then all logical drives \n- Finally other connected devices such as CD-ROMS \n- Historically, drive letters A: and B: were reserved for floppy disk drives",
+  },
+  {
+    question: "What is drive formatting?",
+    answer: "",
+  },
+  {
+    question: "",
+    answer: "",
+  },
+];

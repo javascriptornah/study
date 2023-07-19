@@ -1,8 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Cont = styled.div`
+  transition: width 0.25s ease;
   .info-box {
     border: 1px solid ${(props) => props.colors.darkGrey};
     padding: 32px;
@@ -17,7 +19,8 @@ const Question = ({ question, show, setShow }) => {
     <Cont colors={COLORS}>
       {show ? (
         <div onClick={() => setShow(false)} className="info-box">
-          <p>{question.answer}</p>
+          <ReactMarkdown>{question.answer}</ReactMarkdown>
+
           <div className="mar-bottom-16"></div>
           <div className="flex justify-center x">
             <div className="btn" onClick={() => setShow(true)}>

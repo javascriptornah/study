@@ -1,12 +1,15 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { nanoid } from "nanoid";
 import week3, {
   week1,
   week2,
   week4,
   week5,
   week6,
+  week9,
+  week10,
 } from "../../../public/data/computer_essentials";
 import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
@@ -49,6 +52,8 @@ const ComputerEssentials = () => {
     week4,
     week5,
     week6,
+    week9,
+    week10,
   ]);
   const [week, setWeek] = useState(0);
   const questionRef = useRef(null);
@@ -73,13 +78,18 @@ const ComputerEssentials = () => {
 
   const [weekBtns, setWeekBtns] = useState(() => {
     let weekObj = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 8; i++) {
+      let skipWeek = i;
+      if (i >= 6) {
+        skipWeek += 2;
+      }
       weekObj.push(
         <div
+          key={nanoid()}
           onClick={() => setWeek(i)}
           className={i == week ? "week week-active" : "week"}
         >
-          <p>Week {i + 1}</p>
+          <p>Week {skipWeek + 1}</p>
         </div>
       );
     }
@@ -89,13 +99,18 @@ const ComputerEssentials = () => {
   useEffect(() => {
     setWeekBtns((prev) => {
       let weekObj = [];
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 8; i++) {
+        let skipWeek = i;
+        if (i >= 6) {
+          skipWeek += 2;
+        }
         weekObj.push(
           <div
+            key={nanoid()}
             onClick={() => setWeek(i)}
             className={i == week ? "week week-active" : "week"}
           >
-            <p>Week {i + 1}</p>
+            <p>Week {skipWeek + 1}</p>
           </div>
         );
       }

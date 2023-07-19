@@ -349,10 +349,45 @@ export const week10 = [
   },
   {
     question: "What is drive formatting?",
-    answer: "",
+    answer:
+      "After partioning, your drive must be formatted before it can be used \n- Formatting creates three essntial disk structures... \n- Creates and configures the volume boot sector \n- Creates two copies of the File Allocation Table \n- Creates a blank root directory",
   },
   {
-    question: "",
-    answer: "",
+    question: "What is a low-level drive format (full format)",
+    answer:
+      "- Checks for tracks and sectors marked as bad during initil low-level format \n- The format utility will try and write and read these disk areas with data, this also erases any old data still on the disk (i.e. a surface scan) \n- If the read/write operation fails, then the format will mark bad clusters in the FAT. Bad clusters are not written or read from in future file operations \n- The surface scan is time consuiming, but ensures a reliable disk",
+  },
+  {
+    question: "What is a high-level drive format (quick format)",
+    answer:
+      "- Does not do a surface scan, i.e. the disk is not checked for reliability \n- The FAT is cleared, drive contents remain unchaged",
+  },
+  {
+    question: "What is the GUID Partition Table (GPT)?",
+    answer:
+      "The Global Unique Identifier Partition Table shares a lot with the MBR nut fixes a lot of the limitations of the MBR \n Fixes include: \n- Each partition on your drive includes a 'global unqiue identifier' \n- Capable of containing a maximum of 128 partitions of almost any size hard disk \n- Arranged in LBA (logical block address instead of sectors) \n- Instead of MBR and partition table, they use a GPT header and partition entry array. Both are located at the beginning and end of the drive so there is a protected backup copy.",
+  },
+
+  {
+    question: "What are dynamic disks?",
+    answer:
+      "With the introduction of Windows 2000, Microsoft defined a type of partitionign called Dynamic storage partitioning, better known as Dynamic Disks \n- A drive structure created wit ha dynamic disk is called a volume\n - There is no dynamic disk equivalent to a primary or extended partitions \n - The terms volume and partition refer to the same thing. A defined space of your hard drive. ",
+  },
+
+  {
+    question: "What are the advantages of dynamic disks?",
+    answer:
+      "- You can create as many volumes as you wish \n- You can span volumes over multiple drives \n - You can implement RAID \n - Extend volumes over multiple drives",
+  },
+  {
+    question: "What are the types of volumes?",
+    answer:
+      "Simple volumes \n- Similar to primary partitions and work in the same way \n - If you have a hard drive and want to make half of E: and maek the other drive half F: you create two simple volumes on a dynamic disk and that's it. \nSpanned volumes use unallocated space on multiple drives to create a single volume \nRisks: \n- If any of the spanned drives fail, then the entire volume (data) is lost. \nStriped volumes are RAID 0 volumes. Unallocated space on two hard drives are striped. \n Risks: \n- If any of the drives fail, then the entire volume (data) is lost. \nMirrored volumes are RAID 1 volumes. Unallocated space on two hard drives are mirrored. \nAdvantage: \n- If any of the drives fail, then the other keeps running. \nRAID 5 volumes are RAID 5 arrays. A RAID 5 volume requires three or more dynamic disk with equal size unallocated spaces. ",
+  },
+
+  {
+    question: "What is partition software and what does it do?",
+    answer:
+      "General partition software included with an operating system allow you to perform many tasks. \n- Create a new partition or logical drive\n- Set the active partition \n- Delete a partition \nOne of the two main software packages are included \nFDISK \n- All operating systems up to Windows Me and Linux \nDISKPART \n- Windows 2000, XP, Windows 7, 8, 10 and 11 \n With the included software, partitions cannot be changed without losing the data on the partition. \n- You must delete the partition and then recreate it, \nAftermarket utilities offer some distinct advantages \n- Resize and split partitions on the fly, without data loss \n- Convert between different file systems \n- Copy or move partition to a different physical drive \n- A popular partioning program is PartitionMagic",
   },
 ];

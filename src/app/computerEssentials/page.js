@@ -10,6 +10,8 @@ import week3, {
   week6,
   week9,
   week10,
+  week11,
+  week12,
 } from "../../../public/data/computer_essentials";
 import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
@@ -54,6 +56,8 @@ const ComputerEssentials = () => {
     week6,
     week9,
     week10,
+    week11,
+    week12,
   ]);
   const [week, setWeek] = useState(0);
   const questionRef = useRef(null);
@@ -78,7 +82,7 @@ const ComputerEssentials = () => {
 
   const [weekBtns, setWeekBtns] = useState(() => {
     let weekObj = [];
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 10; i++) {
       let skipWeek = i;
       if (i >= 6) {
         skipWeek += 2;
@@ -99,7 +103,7 @@ const ComputerEssentials = () => {
   useEffect(() => {
     setWeekBtns((prev) => {
       let weekObj = [];
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; i < 10; i++) {
         let skipWeek = i;
         if (i >= 6) {
           skipWeek += 2;
@@ -118,7 +122,6 @@ const ComputerEssentials = () => {
     });
     selectRandomQuestion();
   }, [week]);
-  
 
   return (
     <Cont colors={COLORS}>

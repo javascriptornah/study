@@ -304,3 +304,64 @@ export const week5 = [
       "A relation is in 2NF if and only if it is in 1NF and all non-key attributes are determined by the entire primary key. Partial dependency.",
   },
 ];
+
+export const week10 = [
+  {
+    question: "What are the six parts of the SELECT statement?",
+    answer:
+      "SELECT (return value selection) \nFROM (source selection, usually tables) \nWHERE(Conditional Boolean operations, a.k.a. predicates) \n GROUP (Optional, used with aggregate functions) BY\n HAVING (Optional, used with aggregate functions) \n ORDER BY (Optional, sorts results)",
+  },
+  {
+    question: "What is the field list? (two options)",
+    answer:
+      "* (the asterisk) - which means to include all available columns \n, (the comma) - defined field list seperated by commans \n SELECT* N SELECT id, name",
+  },
+  {
+    question: "How can you eliminate duplicates in a select statement?",
+    answer:
+      "DISTINCT keyword. \nSELECT DISTINCT Buyer, Department \nFROM SKU_DATA;",
+  },
+  {
+    question: "How can you control the amount of rows selected?",
+    answer: "TOP function. \nSELECT TOP 5 Buyter, Department NFROM SKU_DATA;",
+  },
+  {
+    question: "How can you select the top percent?",
+    answer:
+      "Percent function. \nSELECT TOP 75 PERCENT Buyter, Department NFROM SKU_DATA;",
+  },
+  {
+    question: "How do you use where with multiple sets of values?",
+    answer:
+      "WHERE IN function. \n SELECT * NFROM SKU_DATA \nWHERE Buyer IN ('nancy Meyers', 'Cindy Lo', 'Jerry Martin');",
+  },
+  {
+    question: "What are two ways to find a value within a range?",
+    answer:
+      "WHERE AND function or BETWEEN function. \nSELECT * \nFROM ORDER_ITEM NWHERE ExtendedPrice >= 100\nAND ExtendedPrice <= 200\nORDER BY ExtendedPrice; \nor \nSELECT *\nFROM ORDER_ITEM\nWHERE ExtendedPrice BETWEEN 100 AND 200\nORDER BY ExtendedPrice;",
+  },
+  {
+    question: "What is the negate operator?",
+    answer:
+      "NOT - This modifies special operators to negate. \n id not in (1,2,4,5,6)",
+  },
+  {
+    question: "How to find a value between 2 values?",
+    answer:
+      "BETWEEN - This is an inclusive check between 2 values. \nid between 1 and 4",
+  },
+  {
+    question: "How to find a value within a list?",
+    answer:
+      "IN - indicates the inclusion of an item in a list \nid in (1,2,4,5,6) ",
+  },
+  {
+    question: "What does the underscore (_) wildcard character do?",
+    answer: "Represents a single unspecified character in the string.",
+  },
+  {
+    question: "What doesa the percent sign (%) wildcard character do?",
+    answer:
+      "Selected any sequence of unspecified characters (including spaces).",
+  },
+];

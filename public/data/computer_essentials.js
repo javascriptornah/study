@@ -391,3 +391,154 @@ export const week10 = [
       "General partition software included with an operating system allow you to perform many tasks. \n- Create a new partition or logical drive\n- Set the active partition \n- Delete a partition \nOne of the two main software packages are included \nFDISK \n- All operating systems up to Windows Me and Linux \nDISKPART \n- Windows 2000, XP, Windows 7, 8, 10 and 11 \n With the included software, partitions cannot be changed without losing the data on the partition. \n- You must delete the partition and then recreate it, \nAftermarket utilities offer some distinct advantages \n- Resize and split partitions on the fly, without data loss \n- Convert between different file systems \n- Copy or move partition to a different physical drive \n- A popular partioning program is PartitionMagic",
   },
 ];
+
+export const week11 = [
+  {
+    question: "What are directory files?",
+    answer: "These file(s) contain files and other directories (folders).",
+  },
+  {
+    question: "What are special files?",
+    answer:
+      "These files are also known as device files (drivers). \nThese files represent physical devices such as disks, tterminals, printers, networks, tape drives, etc...",
+  },
+  {
+    question: "How are attributes stored in Windows?",
+    answer: "They are stored as a 32-bit binary number",
+  },
+  {
+    question: "What are 6 common file attributes?",
+    answer:
+      "- Read-Only (R) \nHidden (H) \nSystem (S) \nDirectory (D) \nArchive (A) \nNot Content Indexed (I)",
+  },
+  {
+    question: "What does Read-Only (R) files do?",
+    answer:
+      "The Read-Only attribute will prevent software programs from saving changes to a file. \nTHis is useful if you ant to write protect a file. Note that a Read-Only file will not prevent it rom being deleted.",
+  },
+  {
+    question: "What is a System (S) file?",
+    answer:
+      "A file or directory used exclusively by the operating system which should not be altered or deleted. \nBy default System Files are hidden as we don't want users accidentally deleting them.",
+  },
+];
+
+export const week12 = [
+  {
+    question: "What is an IP address?",
+    answer: "IP address represents Internet Protocol address",
+  },
+  {
+    question: "What is an operating system?",
+    answer:
+      "It is a program that allows devices like video, sound, modem and NIC cards, mouse, keyboards, monitors and so on to communicate with each other. It manages hardware and software resources.",
+  },
+  {
+    question: "What are the three parts of OS (Operating System)?",
+    answer: "- Kernel (core) \n- User interface \n- APL interface",
+  },
+  {
+    question: "What is kernel mode?",
+    answer:
+      "It manages memories, input/output, CPU execution instruction codes",
+  },
+  {
+    question: "What is user interface (user mode)?",
+    answer:
+      "It allows users to intereact with the OS settings, like printing, opening/closing applications, createing/deleting files, changing the background",
+  },
+  {
+    question: "What is the API layer?",
+    answer: "It allows devices to talk to the OS.",
+  },
+  {
+    question: "What is Unix?",
+    answer: "Unix is a command line OS and it is used for the internet.",
+  },
+  {
+    question: "What is DOS?",
+    answer: "- command line \n- 16 bit \n- single task",
+  },
+  {
+    question: "What is Windows 95x?",
+    answer: "-GUI (Graphical user interface) \n-32, 64 bit\n- multitask",
+  },
+  {
+    question: "What is Linux?",
+    answer:
+      "- GUI and command line \n- 32 and 64 bit \n- Ubuntu, Kubuntu, Mint, Red hat, Suse, Fedora, Debian",
+  },
+  {
+    question: "What does Kernel do?",
+    answer:
+      "- Memory management \n-Process management \n-File management \n- I/O (input/output) management",
+  },
+  {
+    question: "What is a file system?",
+    answer:
+      "- It stores data in a storage device and organizes them so they can be found easily. \nWindows uses NTFS foe the file system to organize the data \nDII (Dynamic link Libraries). These are the system files. Usually used for commands like Open file, File Save, Search print and more. \n FAT 12, FAT 16, FAT 32, NTFS \nEach of these FAT increases in cluster size, file size and volume size.",
+  },
+  {
+    question: "What are partitions?",
+    answer:
+      "Partitions are sections on the hard drive that store data. \nPrimary, extended, logical \nPrimary are bottable partitions and contains OS \nExtended is NOT bootable and contains logical drive \nLogical: not bootable, contains data file or OS",
+  },
+  {
+    question: "What are the illegal characters in file system?",
+    answer: " / ? : * '' > < |",
+  },
+  {
+    question: "How long can windows file names be?",
+    answer: "255 characters",
+  },
+  {
+    question: "What is a file attribute?",
+    answer:
+      "A file access classification that determines how a file can be viewed or whether it can be edited.",
+  },
+  {
+    question: "How to get to terminal in linux?",
+    answer: "Ctrl + Alt + T",
+  },
+  {
+    question: "What does ~ (Tilde) mean in linux?",
+    answer: "~ User's home directory.",
+  },
+  {
+    question: "What does $ mean in linux?",
+    answer: "$ means standard user.",
+  },
+  {
+    question: "What does # mean in linux?",
+    answer: "Super user.",
+  },
+  {
+    question: "What does ipconfig do?",
+    answer:
+      "Displays the current configuration for the network Interface Cards (NIC) in the system.",
+  },
+  {
+    question: "What are the options for ipconfig",
+    answer:
+      "/all - displays a long listing for the NIC's \n/release - remove the current ip address for the NIC\n/renew - acquire a new IP addres from DHCP \n/flushdns - clears the DNS entries from the local DNS record",
+  },
+  {
+    question: "What does the shell command Ping do?",
+    answer:
+      "icmp echo request to a target system. \nOften used to see if a particulate system or NIC is up.",
+  },
+  {
+    question: "What does the shell command Tracert do?",
+    answer:
+      "Reports the route to a destination system hop by hop. Useful in diagnosing network issues.",
+  },
+  {
+    question: "What does set do in batch commands?",
+    answer:
+      "Sets a variable to a certain value. Set has options: \n/A - arithmetic expression \n/P - prompt for user input",
+  },
+  {
+    question: "How many bits is Unicode?",
+    answer: "32.",
+  },
+];

@@ -118,6 +118,8 @@ const ComputerEssentials = () => {
     });
     selectRandomQuestion();
   }, [week]);
+  
+
   return (
     <Cont colors={COLORS}>
       <h2 className="mar-bottom-8">Computer Essentials Study Quiz</h2>

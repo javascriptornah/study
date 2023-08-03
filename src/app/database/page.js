@@ -6,6 +6,9 @@ import week1, {
   week3,
   week4,
   week5,
+  week9,
+  week10,
+  week11,
 } from "../../../public/data/database";
 import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
@@ -41,7 +44,16 @@ const Cont = styled.div`
   }
 `;
 const ComputerEssentials = () => {
-  const [weeks, setWeeks] = useState([week1, week2, week3, week4, week5]);
+  const [weeks, setWeeks] = useState([
+    week1,
+    week2,
+    week3,
+    week4,
+    week5,
+    week9,
+    week10,
+    week11,
+  ]);
   const [week, setWeek] = useState(0);
   const questionRef = useRef(null);
   const [question, setQuestion] = useState(weeks[0][0]);
@@ -68,13 +80,17 @@ const ComputerEssentials = () => {
 
   const [weekBtns, setWeekBtns] = useState(() => {
     let weekObj = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 8; i++) {
+      let skipWeek = i;
+      if (i >= 5) {
+        skipWeek += 3;
+      }
       weekObj.push(
         <div
           onClick={() => setWeek(i)}
           className={i == week ? "week week-active" : "week"}
         >
-          <p>Week {i + 1}</p>
+          <p>Week {skipWeek + 1}</p>
         </div>
       );
     }
@@ -84,13 +100,17 @@ const ComputerEssentials = () => {
   useEffect(() => {
     setWeekBtns((prev) => {
       let weekObj = [];
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 8; i++) {
+        let skipWeek = i;
+        if (i >= 5) {
+          skipWeek += 3;
+        }
         weekObj.push(
           <div
             onClick={() => setWeek(i)}
             className={i == week ? "week week-active" : "week"}
           >
-            <p>Week {i + 1}</p>
+            <p>Week {skipWeek + 1}</p>
           </div>
         );
       }

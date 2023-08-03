@@ -305,6 +305,30 @@ export const week5 = [
   },
 ];
 
+export const week9 = [
+  {
+    question: "Is SQL a full-feautred programming language?",
+    answer:
+      "SQL is not a full-featured programming language. \nSQL is a data sublanguage for creating and processing database data and metadata.",
+  },
+  {
+    question: "What are the 5 SQL categories>",
+    answer:
+      "- Data definition language (DDL): Used for creating tables, relationships, and other structures \nData manipulation language (DML) statements: Used for queries, inserting, modifying and deleting data. \nSQL/Persistent Stored Modules (SQL/PSM) statements \nTransaction control language (TCL) statements \nData control language (DCL) statements",
+  },
+  {
+    question:
+      "What does the truncate table statement do? TRUCATE TABLE CUSTOMERS",
+    answer:
+      "Removes all data from a table while leaving the table structure intact. \nCannot be used with a table that is referenced by a foreign key constraint. \nResets surrogate key values to their initial value.",
+  },
+  {
+    question: "What does the CREATE INDEX statement do?",
+    answer:
+      "An index is a special data structure that is created to improve database performance.",
+  },
+];
+
 export const week10 = [
   {
     question: "What are the six parts of the SELECT statement?",
@@ -365,3 +389,82 @@ export const week10 = [
       "Selected any sequence of unspecified characters (including spaces).",
   },
 ];
+
+export const week11 = [
+  {
+    question:
+      "What statement is used to sort and how do you determine the order?",
+    answer:
+      "You can sort results using the ORDER BY clause. \nYou can also sort in an ascending (ASC) order, or a descending order (DESC) \nSELECT *NFROM ORDER_ITEM NORDER BY OrderNumber;",
+  },
+  {
+    question: "What are the two limitiations to SQL built-in functions?",
+    answer:
+      "You cannot combine table column names with an SQL built-in function ]nSELECT   Department, COUNT(*)NFROM   SKU_DATA; \nYou cannot use them in an SQL WHERE clause because the SQL WHERE clause operates on rows, whereas the aggregate functions operate on columns.\nSELECT   * NFROM   RETAIL_ORDER NWHERE  OrderTotal > AVG(OrderTotal);",
+  },
+  {
+    question: "What does the WHERE clause do in grouping query?",
+    answer: "Determines which rows will be used to determine the groups.",
+  },
+  {
+    question: "What does the HAVING clause do in grouping query?",
+    answer: "Specifies which groups will be used in the final results",
+  },
+  {
+    question: "Which columns need to be in the GROUP BY clause?",
+    answer:
+      "When using the GROUP BY clause, any and all column names in the SELECT clause that are not used or associated with an SQL built-in function must appear in the GROUP BY clause. \nSELECT   Department, SKU, \n              COUNT(SKU) AS Dept_SKU_Count \nFROM   SKU_DATA N GROUP BY   Department;",
+  },
+];
+
+export const week12 = [
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  {
+    question:"",
+    answer:"",
+  },
+  
+]

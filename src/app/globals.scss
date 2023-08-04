@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Libre+Baskerville&display=swap');
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -5,15 +7,22 @@
 }
 
 $black: #06002B;
+$offblack: #06002B;
 $grey: #E4E4E4;
 $darkGrey: #C1BED4;
 $green1: #002B0F;
+$offgreen: #003613;
 $green2: #007528;
 $green3: #01A83A;
 $green4: #03D74B;
 
+p, li{
+  font-family: "Libre Baskerville";
+}
+
 h1, h2,h3,h4,h5,h6{
   color: $black;
+  font-family: 'Fjalla One';
 }
 
 .btn{
@@ -22,11 +31,13 @@ h1, h2,h3,h4,h5,h6{
   border-radius: 32px;
   cursor:pointer;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  &:active{
-    background-color: $green2;
-  }
+ 
   &:hover{
     box-shadow:none;
+    background-color: $offgreen;
+  }
+  &:active{
+    background-color: $green2;
   }
   p{
     color: #fff;
@@ -59,7 +70,25 @@ h1, h2,h3,h4,h5,h6{
   margin-bottom: 32px;
 }
 
-.flex{ display:flex;}
+.mar-right-8{
+  margin-right: 8px;
+}
+
+.mar-right-16{
+  margin-right: 16px;
+}
+
+.flex{ 
+  display:flex !important;
+}
+
+.green{
+  color: $green4;
+}
+
+.flex-end{
+  justify-content: flex-end;
+}
 .justify-center{
   justify-content: center;
 }
@@ -69,8 +98,16 @@ h1, h2,h3,h4,h5,h6{
   flex-direction: column;
 }
 
+.space-between{
+  justify-content: space-between;
+}
+
 .align-center{
   align-items: center;
+}
+
+.icon-sm{
+  font-size:24px;
 }
 
 a{
@@ -86,4 +123,68 @@ a{
 
 .flex-wrap{
   flex-wrap: wrap;
+}
+
+.box-shadow {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+li{
+  margin-left: 16px;
+  margin-bottom: 8px;
+}
+
+p{
+  
+  line-height: 1.5;
+}
+
+.markdown{
+  padding-bottom: 16px;
+  p{
+    margin-bottom: 8px;
+  }
+
+  li{
+    font-size: 18px;
+  }
+}
+
+.green-btn{
+  border: 2px solid $green4;
+  display: inline-block;
+  border-radius: 32px;
+  padding: 8px 16px;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: background-color .25s ease;
+  
+  h2, .green{
+    color: $green4;
+    transition: color .25s ease;
+  }
+  &:active {
+    box-shadow: none;
+  }
+
+  &:hover {
+    background-color: $green4;
+    h2,.green{
+      color: #fff;
+    }
+  }
+}
+
+.index{
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: $green2;
+  width:24px;
+  height:24px;
+  border-radius: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  h5{
+    color: #fff;
+  }
 }

@@ -17,6 +17,8 @@ import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
 import GenerateBtn from "./GenerateBtn";
 import Question from "./Question";
+import ExamQuestions from "./ExamQuestions";
+
 const Cont = styled.div`
   padding: 32px;
   @keyframes opacity {
@@ -136,6 +138,8 @@ const ComputerEssentials = () => {
       <div className=" flex-column align-center" ref={questionRef}>
         <Question question={question} show={show} setShow={setShow} />
       </div>
+      <div className="mar-bottom-32"></div>
+      <ExamQuestions />
     </Cont>
   );
 };

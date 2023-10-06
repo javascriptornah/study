@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Libre+Baskerville&display=swap');
+@import './fonts.scss';
+@import './buttons.scss';
 
 * {
   box-sizing: border-box;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
 
 $black: #06002B;
@@ -15,113 +16,150 @@ $offgreen: #003613;
 $green2: #007528;
 $green3: #01A83A;
 $green4: #03D74B;
+$offWhite: #ECFCF1;
 
-p, li{
-  font-family: "Libre Baskerville";
+.dark-grey {
+  color: $darkGrey;
 }
 
-h1, h2,h3,h4,h5,h6{
-  color: $black;
-  font-family: 'Fjalla One';
+.off-white {
+  color: $offWhite;
 }
 
-.btn{
+.spacer {
+  width: 100%;
+  height: 120px;
+  background-color: $darkGrey;
+  margin: 80px 0;
+}
+
+.green-2 {
+  color: $green2;
+}
+
+
+.relative {
+  position: relative;
+}
+
+.btn {
   background-color: $green1;
   padding: 4px 8px;
   border-radius: 32px;
-  cursor:pointer;
+  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
- 
-  &:hover{
-    box-shadow:none;
+
+  &:hover {
+    box-shadow: none;
     background-color: $offgreen;
   }
-  &:active{
+
+  &:active {
     background-color: $green2;
   }
-  p{
+
+  p {
     color: #fff;
   }
 }
 
 .nav-link {
-  &:hover{
+  &:hover {
     color: $green3;
   }
 }
-.grey-line{
-  width:100%;
+
+.grey-line {
+  width: 100%;
   height: 1px;
   background-color: $darkGrey;
 }
 
-.mar-bottom-4{
+// Margin and padding
+
+.mar-bottom-4 {
   margin-bottom: 4px;
 }
-.mar-bottom-8{
+
+.mar-bottom-8 {
   margin-bottom: 8px;
 }
 
-.mar-bottom-16{
+.mar-bottom-16 {
   margin-bottom: 16px;
 }
 
-.mar-bottom-32{
+.mar-bottom-32 {
   margin-bottom: 32px;
 }
 
-.mar-right-8{
+.mar-right-8 {
   margin-right: 8px;
 }
 
-.mar-right-16{
+.mar-right-16 {
   margin-right: 16px;
 }
 
-.flex{ 
-  display:flex !important;
+.mar-right-32 {
+  margin-right: 32px;
 }
 
-.green{
+.padding-32 {
+  padding: 32px;
+}
+
+// Flex
+
+.flex {
+  display: flex !important;
+}
+
+.green {
   color: $green4;
 }
 
-.flex-end{
+.flex-end {
   justify-content: flex-end;
 }
-.justify-center{
+
+.justify-center {
   justify-content: center;
 }
 
-.flex-column{
-  display:flex;
+.flex-column {
+  display: flex;
   flex-direction: column;
 }
 
-.space-between{
+.space-between {
   justify-content: space-between;
 }
 
-.align-center{
+.space-around {
+  justify-content: space-around;
+}
+
+.align-center {
   align-items: center;
 }
 
-.icon-sm{
-  font-size:24px;
+.icon-sm {
+  font-size: 24px;
 }
 
-a{
+a {
   text-decoration: none;
-  
-  
+
+
 }
 
-.active-link{
+.active-link {
   color: $green4;
-  
+
 }
 
-.flex-wrap{
+.flex-wrap {
   flex-wrap: wrap;
 }
 
@@ -129,28 +167,29 @@ a{
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-li{
+li {
   margin-left: 16px;
   margin-bottom: 8px;
 }
 
-p{
-  
+p {
+
   line-height: 1.5;
 }
 
-.markdown{
+.markdown {
   padding-bottom: 16px;
-  p{
+
+  p {
     margin-bottom: 8px;
   }
 
-  li{
+  li {
     font-size: 18px;
   }
 }
 
-.green-btn{
+.green-btn {
   border: 2px solid $green4;
   display: inline-block;
   border-radius: 32px;
@@ -158,33 +197,38 @@ p{
   cursor: pointer;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   transition: background-color .25s ease;
-  
-  h2, .green{
+
+  h2,
+  .green {
     color: $green4;
     transition: color .25s ease;
   }
+
   &:active {
     box-shadow: none;
   }
 
   &:hover {
     background-color: $green4;
-    h2,.green{
+
+    h2,
+    .green {
       color: #fff;
     }
   }
 }
 
-.index{
+.index {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   background-color: $green2;
-  width:24px;
-  height:24px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  h5{
+
+  h5 {
     color: #fff;
   }
 }

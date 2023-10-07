@@ -8,7 +8,7 @@ const Cont = styled.div``;
 const GenerateBtn = () => {
   return (
     <Cont colors={COLORS} className="green-btn">
-      <h2>Generate Question</h2>
+      <h4>Generate Question</h4>
     </Cont>
   );
 };

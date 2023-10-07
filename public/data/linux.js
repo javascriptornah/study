@@ -276,4 +276,214 @@ export const week4 = [
   },
 ];
 
+export const week5 = [
+  {
+    question: "What folder are password store din?",
+    answer: "/etc/shadow",
+  },
+  {
+    question: "What is the /etc/passwd file?",
+    answer:
+      "• It generally requires root access for modifications\n• It’s content can be viewed by anyone\n• Users can modify content related to their own account info using the appropriate commands only(such as passwd to change password)\n• All user passwords will be stored in /etc/shadow, accessible only by root or root processes",
+  },
+  {
+    question: "What does an entry look like in /etc/passwd file?",
+    answer:
+      "A typical entry looks like this:\nuser1 : x: xxx : yyy : other info : /home/dir : /bin/bash\n1. login name - user name the user needs to type in to log into the system\n2. password field - An x character indicates that encrypted password is stored in a separate file: /etc/shadow\n3. UID - User ID associated to login name\n4. GID - main Group ID associated to login name\n5. other info or comment - other information about the user, such as real name, office #, telephone number, etc\n6. default home directory for user - set by administrator, directory is owned and managed by user\n7. default shell for user - shell that user will start in when login into the system\n• spacing exaggerated to enhance viewing. There are no spaces before or after the field delimiter (:)",
+  },
+  {
+    question: "What does an entry in /etc/shadow look like?",
+    answer:
+      "Each entry in /etc/shadow contains the user's login, their encrypted password, and a number of fields relating to password expiration. A typical entry looks like this:user1 : /3GJllg1o4152 : 11009 : 0 : 99999 :7 : : :\n1. Username: up to 8 characters. Case-sensitive, usually all lowercase. A direct match to the username in the /etc/passwd file.\n2. Encrypted password: A '!' placed before encrypted password indicates the password has not been set or the account has been disabled.\n3. Last password change (lastchanged): Days since Jan 1, 1970 that password was last changed\n4. Minimum: The minimum number of days required between password changes i.e. the number of days left before the user is allowed to change his/her password\n5. Maximum: The maximum number of days the password is valid (after that user is forced to change his/her password)\n6. Warn : The number of days before password is to expire that user is warned that his/her password must be changed\n7. Inactive : The number of days after password expires that account is disabled\n8. Expire : days since Jan 1, 1970 that account is disabled i.e. an absolute date specifying when the login may no longer be used",
+  },
+  {
+    question: "Describe the useradd command with the flags. (-d)",
+    answer:
+      "Used to create a new user account. Linux will also create a group with the same name by default.Syntax: useradd [options] username\n• -d Define home directory\n• -g Initial group name, the group name must exist\n• -G A comma-separated list of supplementary groups which the user is also a member of.\n• -c Any text string: add comments or other information: such as user’s full name\n• -N Do not create a group with the same name as username, but add the user to an existing group: users (GID=100)\n• -e Account expiration date: YYYY-MM-DD\n• -s Login shell\n• -m Create home directory if does not exist, and copy initial files contained in /etc/skel\nuseradd –D Display and change the default values\nWhen invoked without the -D option, the useradd command creates a new user account using the values specified on the command line and the default values from the system. \nExample:\nuseradd -c “Jo Bob” -d /home/jbob -m -g faculty -G comp, staff -e 2013-01-01 -s /bin/bash jbob",
+  },
+  {
+    question: "What does the userdel command do?",
+    answer:
+      "• userdel [options] username\n• Remove an user from the system\n• Options\n• -r Remove the user’s home directory and files contained in it\n• Example:\nDelete the entries of user2 from /etc/passwd and /etc/shadow, but not delete the user’s home directory and files in it.userdel user2",
+  },
+  {
+    question: "What does the usermod command do?",
+    answer:
+      "usermod [options] username\n• Allows for modifying most of the information stored in /etc/passwd associated with an user account\n• several options available to modify almost all of the information associated with any account, assuming the user has the right to modify the information",
+  },
+  {
+    question: "What are the arguments for usermod command?",
+    answer:
+      "-c add comments or other information\n-d change home directory if –m option is given, the contents of the user’s home directory will be moved to the new home directory, which will be created if it doesn’t exist\n-g change initial group\n-G change supplementary groups which user is also a member of, if the user currently is a member of a group which is not listed, the user will be removed from the group\n-s change the login shell \n-e The date on which the user account will be disabled: YYYY-MM-DD\n-l Change login name\n-L Disable/lock user’s password, which will place a “!’ before encrypted password in \n/etc/shadow\n-U Enable/Unlock user’s password, which will remove the “!’ from encrypted password in \n/etc/shadow",
+  },
+  {
+    question: "What does the chsh command do?",
+    answer:
+      "chsh [options] username\n• Changes login shell associated with a user account\n• if a shell isn’t specified on the command line, it will prompt for the shell to useOptions\n-s: specify the shell to associate to the accountExample: chsh -s /bin/bash user1",
+  },
+  {
+    question: "Describe linux groups.",
+    answer:
+      "• Groups are a simple mechanism for allowing a “group” of users with common access requirements to have access capabilities which, individually, they do not have.\nAs such, users are generally associated to group(s) based on an identified need to access information they cannot access as a user alone. This is generally done by administrators.\n• All group information is maintained in the /etc/group and /etc/gshadow on the system. The format of this file is different than the /etc/passwd file.",
+  },
+  {
+    question: "What is the format of a linux group?",
+    answer:
+      "An entry in /etc/group looks like this\nuser1:x:500:user2, user3\n1. group_name: It is the name of group. If you run ls -l command, you will see this name printed in the group field.\n2. Password: Generally password is not used, hence it is empty/blank. It can store encrypted password. This is useful to implement privileged groups.\n3. Group ID (GID): Each user must be assigned a group ID. You can see this number in your /etc/passwd file.\n4. Group List: It is a list of user names of users who are members of the group. The user names, must be separated by comma",
+  },
+  {
+    question: "What does an entry in /etc/gshadow look like?",
+    answer:
+      "/etc/gshadow contains lines with the following colon-separated fields:\ngroup1:$1$VF61Ap3s$c7J6tC:user1:user1,user2\n1. group name\n2. encrypted password\n3. comma-separated list of group administrators\n4. comma-separated list of group members",
+  },
+  {
+    question: "What does the command groupadd do?",
+    answer: "Create a new group",
+  },
+  {
+    question: "What does the commnd groupdel do?",
+    answer: "Remove a group",
+  },
+  {
+    question: "What does the command groupmod do?",
+    answer: " Modify a group\n• Options\n• -g gid\n• -n groupname",
+  },
+  {
+    question: "What does the command groups username do?",
+    answer: "Displays which groups the user currently belongs to",
+  },
+  {
+    question: "What does the command newgrp groupname do?",
+    answer:
+      "• Change group ID (effective group) to a new group they already belong to in during the login session\n• Prompt for group password if it is set to change to a group which the user is not a member of ",
+  },
+  {
+    question: "What does gpasswd do?",
+    answer:
+      "gpasswd is used to administer the /etc/group and /etc/gshadow file. Every group can have administrators, members and a password. If a group password is set, non-member can supply a password to use newgrp command to change initial group",
+  },
+  {
+    question: "What does the -A flag do with gpasswd?",
+    answer:
+      "-A Define group administrator which can add or delete members with –a and –d options",
+  },
+  {
+    question: "What does the -r flag do with gpasswd?",
+    answer:
+      "-r Remove group password, only group members will be allowed to use newgrp to join the group",
+  },
+  {
+    question: "What does the id command do?",
+    answer:
+      "id [options] username\n• prints UID, GID and groups information for username\n• if no user is specified, then current user is assumed",
+  },
+  {
+    question: "What does the su command do?",
+    answer:
+      "su [-] username\n• allows for switching from one account to another\n• opens up a subshell as the new user\n• only possible if the user has the password for the other account\n• the dash (-), which must be preceded and followed by a space, indicates that the user wishes to use a login shell.\nWithout the dash (-), the su command will switch personalities but not associated environment settings",
+  },
+  {
+    question: "How can you use {} to create a list of files or directories?",
+    answer:
+      "Using {} to create a list of files or directories\ntouch ~/dir1/{f1,f2,f3}\nmkdir ~/dir2/{a1,a2,a3}\nmkdir -p ~/backup/{old,new}/{labs{1,2,3},lecture{1,2,3}}",
+  },
+  {
+    question: "What does the wildcard * do?",
+    answer: "Matches 0 or more characters in a filename.",
+  },
+  {
+    question: "What does the wildcard ? do?",
+    answer: "Matches 1 character in a filename.",
+  },
+  {
+    question: "What does the wildcard [aed] command do?",
+    answer:
+      "Matches 1 character in a filename provided it is either a, e, or d.",
+  },
+  {
+    question: "What does the wildcard [a-e] command do?",
+    answer:
+      "Matches 1 character in a filename provided it is a, b, c, d, or e.",
+  },
+  {
+    question: "What does the wildcard [!a-e] command do?",
+    answer:
+      "Matches 1 character in a filename provided it is not a, b, c, d or e.",
+  },
+  {
+    question: "What does the grep command do?",
+    answer:
+      "grep command selects and prints lines from a file (or a bunch of files) or the standard output that match a pattern (a regular expression). ",
+  },
+  {
+    question: "What do the options do with the grep command? -i, -v, -c, -n",
+    answer:
+      "-i Ignore uppercase and lowercase when comparing.\n-v Print only lines that do not match the pattern.\n-c Print only a count of the matching lines.\n-n Display the line number before each matching line.\ncat /etc/fstab | grep “ext3”\ngrep -v “ext3” /etc/fstab\ncat /etc/passwd | grep root\ngrep -c root /etc/group",
+  },
+  {
+    question: "What does the find command do?",
+    answer:
+      "It allows you to search for files in the filesystem.\nIt locates the files in the directory tree based upon the criteria specified in the options\nThe general form of find command:find path expression\n• The current directory is used if path is not specified\n• Expression is comprised of options, tests and actions",
+  },
+  {
+    question: "How can you use the find command?",
+    answer:
+      "find –mtime +90\nThe -mtime option takes an argument to specify the timeframe for the search. +90 indicates a file modified more than 90 days ago. \nfind / -name “*.mp3”\nTo find all mp3 filesfind –type d\nTo find all directories in current locationfind / -user hann 2> /dev/null\nTo find all files owned by “hann”, and ignore errors",
+  },
+  {
+    question: "Describe inodes.",
+    answer:
+      "• Linux stores information about each file in a data structure called an inode.\n• Each inode is identified by a unique number called the inode number.\n• Every Linux filesystem begins with a large set of inode numbers. \n– When files are created the system creates an inode to describe the file and assigns the inode an empty inode number\n– When files are deleted the system removes its inode and marks the inode number as empty\n– A filesystem cannot create a new file unless it has an empty inode number.\n• filesystems store inode numbers in a file called the inode list. \n• Inode numbers are specific to a single filesystem. Every file on a filesystem has a unique inodenumber\n• Use the -i option with the ls command, to list the inode number of files. \nls -i",
+  },
+  {
+    question: "What is a symbolic (soft) link?",
+    answer:
+      "• symbolic (soft) link to an existing file and/or directory on the system\n• points to existing file/directory, allowing for sharing it without actually duplicating it’s contents",
+  },
+  {
+    question: "How do you create a symbolic(soft) link?",
+    answer:
+      "• A soft link is a special kind of file that contains a pathname to another file\n• To create a symbolic link from slinkname to oldfilename: \nln -s oldfilename slinkname",
+  },
+  {
+    question: "What is a hard link?",
+    answer:
+      "• A hard link is a connection between a filename and inodenumber. A user identifies files by filename while the kernel identifies files by the inode number.\n",
+  },
+  {
+    question: "How many hard links can a file have?",
+    answer:
+      " One file can have any number of hard links. The hard links provide different filenames for the same physical file",
+  },
+  {
+    question: "What do inodes do in hard links?",
+    answer:
+      "The kernel assigns the file an unused inode number and creates the physical file",
+  },
+  {
+    question: "What is the syntax to hard link a file?",
+    answer:
+      " To create a hard link between newfilename and oldfilename: \nln oldfilename newfilename",
+  },
+  {
+    question: "Do changes made to one file in a hard link affect both files?",
+    answer:
+      " Changes made to either oldfilename or newfilename affect both of them because the changes are made to the same physical file.",
+  },
+  {
+    question:
+      "Will renaming or removing files effect the other in a hard link?",
+    answer:
+      "• Renaming either file will not affect the other. \n• Removing either file will not affect the other. The physical file will not be removed from the disk until all hard links are deleted. ",
+  },
+  {
+    question: "What is the syntax to copy a soft link?",
+    answer: "cp -d",
+  },
+  {
+    question: "What is the syntax to copy a hard link?",
+    answer: "cp -l",
+  },
+];
+
 export const fullQuestionList = [...week1, ...week2, ...week3];

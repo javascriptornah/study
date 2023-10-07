@@ -63,7 +63,7 @@ const ExamQuestion = ({ question, answer, index }) => {
           <div className="index mar-right-16">
             <p className="off-white small">{index}</p>
           </div>
-          <h3>{question}</h3>
+          <h4>{question}</h4>
         </div>
         <FontAwesomeIcon
           icon={faChevronDown}

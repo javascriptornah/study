@@ -118,7 +118,7 @@ export const week4 = [
       "➢A static method calls an instance method in the same class by using only the method name. \n➢A static method attempts to access an instance variable in the same class by using only the variable name.",
   },
   {
-    question: "What is the privilege of least priviledge?",
+    question: "What is the practice of least priviledge?",
     answer:
       "➢ Code should be granted only the amount of privilege and access that it needs to accomplish its designated task, but no more. \n➢ Makes your programs more robust by preventing code from accidentally (or maliciously) modifying variable values and calling methods that should not be accessible.",
   },

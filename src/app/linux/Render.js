@@ -1,7 +1,14 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { week1, week2, week3 } from "../../../public/data/linux.js";
+import {
+  week1,
+  week2,
+  week3,
+  week4,
+  week5,
+  fullQuestionList,
+} from "../../../public/data/linux.js";
 import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
 import GenerateBtn from "../computerEssentials/GenerateBtn";
@@ -39,7 +46,7 @@ const Cont = styled.div`
   }
 `;
 const Render = () => {
-  const [weeks, setWeeks] = useState([week1, week2, week3]);
+  const [weeks, setWeeks] = useState([week1, week2, week3, week4, week5]);
   const [week, setWeek] = useState(0);
   const questionRef = useRef(null);
   const [question, setQuestion] = useState(weeks[0][0]);
@@ -109,7 +116,7 @@ const Render = () => {
         <Question question={question} show={show} setShow={setShow} />
       </div>
       <div className="mar-bottom-32"></div>
-      <ExamQuestions />
+      <ExamQuestions fullQuestionList={fullQuestionList} />
     </Cont>
   );
 };

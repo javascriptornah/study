@@ -486,4 +486,10 @@ export const week5 = [
   },
 ];
 
-export const fullQuestionList = [...week1, ...week2, ...week3];
+export const fullQuestionList = [
+  ...week1,
+  ...week2,
+  ...week3,
+  ...week4,
+  ...week5,
+];

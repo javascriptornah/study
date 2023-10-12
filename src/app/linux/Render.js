@@ -1,31 +1,5 @@
 "use client";
 
-export const metadata = {
-  title: "Algonquin Study",
-  description:
-    "Learn linux through a series a questions. This is a great way to really practice and remember linux concepts.",
-  image: "/images/main.png",
-  link: "https://algonquinstudy.vercel.app",
-  tags: ["linux", "learn linux", "linux notes", "linux study notes"],
-  date: "2023-10-06 20:00:00.000",
-  type: "website",
-  openGraph: {
-    title: "Algonquin Study",
-    description:
-      "Study app for algonquin college students in computer programming level 1.",
-    url: "https://algonquinstudy.vercel.app",
-    images: [
-      {
-        url: "/images/main.png",
-        width: 800,
-        height: 400,
-      },
-    ],
-    locale: "en-US",
-    type: "website",
-  },
-};
-
 import { useState, useRef, useEffect } from "react";
 import { week1, week2, week3 } from "../../../public/data/linux.js";
 import styled from "styled-components";
@@ -78,8 +52,7 @@ const Render = () => {
       return;
     }
     setQuestion(weeks[week][number]);
-    console.log("kkk");
-    console.log(questionRef);
+
     try {
       if (questionRef != null) {
         questionRef?.current?.classList?.add("opacity-anim");
@@ -92,7 +65,7 @@ const Render = () => {
 
   const [weekBtns, setWeekBtns] = useState(() => {
     let weekObj = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < weeks.length; i++) {
       weekObj.push(
         <div
           onClick={() => setWeek(i)}
@@ -108,7 +81,7 @@ const Render = () => {
   useEffect(() => {
     setWeekBtns((prev) => {
       let weekObj = [];
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < weeks.length; i++) {
         weekObj.push(
           <div
             onClick={() => setWeek(i)}

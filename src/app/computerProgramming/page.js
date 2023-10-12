@@ -100,7 +100,7 @@ const ComputerEssentials = () => {
   useEffect(() => {
     setWeekBtns((prev) => {
       let weekObj = [];
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; i < weeks.length; i++) {
         let skipWeek = i;
         if (i >= 5) {
           skipWeek += 3;

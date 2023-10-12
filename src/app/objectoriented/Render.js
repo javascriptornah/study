@@ -7,13 +7,17 @@ import {
   week3,
   week4,
   week5,
-} from "../../../public/data/database2";
+  week6,
+} from "../../../public/data/objectOriented.js";
 import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
 import GenerateBtn from "../computerEssentials/GenerateBtn";
 import Question from "../computerEssentials/Question";
+import ExamQuestions from "../../../public/components/AllQuestions/ExamQuestions.js";
 const Cont = styled.div`
   padding: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
   @keyframes opacity {
     from {
       opacity: 0;
@@ -41,8 +45,15 @@ const Cont = styled.div`
     border: 2px solid ${(props) => props.colors.green4};
   }
 `;
-const ComputerEssentials = () => {
-  const [weeks, setWeeks] = useState([week1, week2, week3, week4, week5]);
+const Render = () => {
+  const [weeks, setWeeks] = useState([
+    week1,
+    week2,
+    week3,
+    week4,
+    week5,
+    week6,
+  ]);
   const [week, setWeek] = useState(0);
   const questionRef = useRef(null);
   const [question, setQuestion] = useState(weeks[0][0]);
@@ -55,8 +66,7 @@ const ComputerEssentials = () => {
       return;
     }
     setQuestion(weeks[week][number]);
-    console.log("kkk");
-    console.log(questionRef);
+
     try {
       if (questionRef != null) {
         questionRef?.current?.classList?.add("opacity-anim");
@@ -101,7 +111,7 @@ const ComputerEssentials = () => {
   }, [week]);
   return (
     <Cont colors={COLORS}>
-      <h2 className="mar-bottom-8">Database Study Quiz</h2>
+      <h2 className="mar-bottom-8">Object Oriented Study Quiz</h2>
       <div className="grey-line mar-bottom-16"></div>
       <div className="flex mar-bottom-32 flex-wrap">{weekBtns}</div>
       <div className="flex justify-center mar-bottom-32">
@@ -112,8 +122,10 @@ const ComputerEssentials = () => {
       <div className=" flex-column align-center" ref={questionRef}>
         <Question question={question} show={show} setShow={setShow} />
       </div>
+      <div className="mar-bottom-32"></div>
+      <ExamQuestions />
     </Cont>
   );
 };
 
-export default ComputerEssentials;
+export default Render;

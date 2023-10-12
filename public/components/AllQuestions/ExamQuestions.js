@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { fullQuestionList } from "../../../public/data/linux";
+
 import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
 import ExamQuestion from "./ExamQuestion";
@@ -15,7 +15,7 @@ const Cont = styled.div`
   }
 `;
 
-const ExamQuestions = ({ refreshPage }) => {
+const ExamQuestions = ({ refreshPage, fullQuestionList }) => {
   const [questions, setQuestions] = useState(
     fullQuestionList.map((question, index) => {
       return (

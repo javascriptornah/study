@@ -1,5 +1,9 @@
 export const week1 = [
-  { question: "Nothing to add", answer: "lol", question: "lol", answer: "lol" },
+  { question: "Nothing to add", answer: "lol" },
+  {
+    question: "Nothing in week 1",
+    answer: "nothing here",
+  },
 ];
 
 export const week2 = [
@@ -209,4 +213,12 @@ export const week6 = [
     question: "Can constructors and static methods be declared abstract?",
     answer: "No, constructors and static methods cannot be declared abstract.",
   },
+];
+
+export const fullQuestionList = [
+  ...week2,
+  ...week3,
+  ...week4,
+  ...week5,
+  ...week6,
 ];

@@ -8,6 +8,7 @@ import {
   week4,
   week5,
   week6,
+  fullQuestionList,
 } from "../../../public/data/objectOriented.js";
 import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
@@ -123,7 +124,7 @@ const Render = () => {
         <Question question={question} show={show} setShow={setShow} />
       </div>
       <div className="mar-bottom-32"></div>
-      <ExamQuestions />
+      <ExamQuestions fullQuestionList={fullQuestionList} />
     </Cont>
   );
 };

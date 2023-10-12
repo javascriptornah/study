@@ -45,7 +45,7 @@ export const week2 = [
   {
     question: "What are interfaces in objects?",
     answer:
-      "❖ Interfaces are collections of related methods thattypically enable you to tell objects what to do, but nothow to do it.\n❖ Automobile example: a “basic-driving-capabilities”interface consisting of a steering wheel, an acceleratorpedal and a brake pedal would enable a driver to tell thecar what to do.\n❖ Knowing how to use this interface for turning,accelerating and braking, you can drive many types ofcars, even though manufacturers may implement thesesystems differently.",
+      "❖ Interfaces are collections of related methods thattypically enable you to tell objects what to do, but nothow to do it. \n ❖ Automobile example: a “basic-driving-capabilities”interface consisting of a steering wheel, an acceleratorpedal and a brake pedal would enable a driver to tell thecar what to do. \n ❖ Knowing how to use this interface for turning,accelerating and braking, you can drive many types ofcars, even though manufacturers may implement thesesystems differently.",
   },
   {
     question: "Can java run on all computers?",

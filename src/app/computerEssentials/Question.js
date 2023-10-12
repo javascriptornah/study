@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import COLORS from "../../../public/data/colors";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import TextParser from "../../../public/components/TextParser";
 
 const Cont = styled.div`
   transition: width 0.25s ease;
@@ -19,7 +19,7 @@ const Question = ({ question, show, setShow }) => {
     <Cont colors={COLORS}>
       {show ? (
         <div onClick={() => setShow(false)} className="info-box">
-          <ReactMarkdown>{question.answer}</ReactMarkdown>
+          <TextParser>{question.answer}</TextParser>
 
           <div className="mar-bottom-16"></div>
           <div className="flex justify-center x">
@@ -31,6 +31,7 @@ const Question = ({ question, show, setShow }) => {
       ) : (
         <div className="info-box">
           <p>{question.question}</p>
+
           <div className="mar-bottom-16"></div>
           <div className="flex justify-center">
             <div className="btn" onClick={() => setShow(true)}>

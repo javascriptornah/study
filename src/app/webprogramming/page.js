@@ -7,17 +7,17 @@ import {
   week5,
   week6,
   fullQuestionList,
-} from "../../../public/data/database2.js";
-const Database = () => {
+} from "../../../public/data/webprogramming.js";
+const WebProgramming = () => {
   return (
     <div>
       <PageRender
         weeksFetch={[week1, week2, week3, week4, week5, week6]}
         fullQuestionList={fullQuestionList}
-        title="Database"
+        title="Web Programming"
       />
     </div>
   );
 };
 
-export default Database;
+export default WebProgramming;

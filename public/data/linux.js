@@ -35,7 +35,7 @@ export const week1 = [
       "This is the sub-system that displays the graphics on your monitor. It is commonly referred to as the X server or just X.",
   },
   {
-    question: "Desktop Environment",
+    question: "What is the Desktop Environment",
     answer:
       "This is the piece that the users interact with. There are many desktop environments to choose from (GNOME, Cinnamon, Mate, KDE, Xfce, etc.). Each desktop environment includes built-in applications (such as file managers, configuration tools, web browsers, and games).",
   },
